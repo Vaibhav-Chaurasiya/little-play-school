@@ -1,0 +1,28 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "site-data"
+    label: "Website Data"
+    files:
+      - label: "Main Data File"
+        name: "data"
+        file: "data.json"
+        fields:
+          - label: "News"
+            name: "news"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Date", name: "date", widget: "datetime" }
+          - label: "Gallery"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - { label: "Image URL", name: "image", widget: "string" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
